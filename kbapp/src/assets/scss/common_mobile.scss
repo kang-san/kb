@@ -1,0 +1,37 @@
+@charset "utf-8";
+// 공통
+@import 'reset';
+@import 'variable';
+@import 'mixin';
+@import 'icons';
+@import 'modal';
+@import 'text';
+@import 'button';
+@import 'keyframe';
+@import 'input';
+@import 'table';
+@import 'util';
+@import 'layoutm';
+
+/* input-m */
+.check-wrap label {
+  &::before,
+  &::after {
+    top: .5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+} 
+
+.check-wrap label {
+  line-height: 1.6;
+}
+
+// .text-info, // 2022.01.13
+// .text-info2, 
+// .text-info3,
+// .text-info4 {
+//   &.error {
+//     margin-left:.2rem;
+//   }
+// }

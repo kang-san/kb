@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+@mixin clearBoth() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin textOverflow() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin textOverflowLineOne() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin textOverflowLine($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin prefix($property, $value) {
+  $prefixes: webkit, moz, ms, o;
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // 기본
+  #{$property}: $value;
+}
+// body.test4 {
+//   @include prefix(border-radius, 5px);
+// }
+@mixin transition($prop: all, $duration: 0.5s, $timing: ease, $delay: 0) {
+  transition: $prop $duration $timing $delay;
+}
+
+@mixin notoFont($weight: light, $color: #000) {
+  @if $weight==bold {
+    font-family: 'NotoSansKR-Bold';
+    color: $color;
+  } @else if $weight==light {
+    font-family: 'NotoSansKR-Light';
+    color: $color;
+  } @else if $weight==medium {
+    font-family: 'NotoSansKR-Medium';
+    color: $color;
+  } @else if $weight==thin {
+    font-family: 'NotoSansKR-Thin';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'NotoSansKR-Regular';
+    color: $color;
+  } @else if $weight==black {
+    font-family: 'NotoSansKR-Black';
+    color: $color;
+  } @else if $weight==demilight {
+    font-family: 'NotoSansKR-DemiLight';
+    color: $color;
+  }
+}
+
+@mixin robotoFont($weight: regular, $color: #000) {
+  @if $weight==bold {
+    font-family: 'Roboto-Bold';
+    color: $color;
+  } @else if $weight==italic {
+    font-family: 'Roboto-Italic';
+    color: $color;
+  } @else if $weight==light {
+    font-family: 'Roboto-Light';
+    color: $color;
+  } @else if $weight==medium {
+    font-family: 'Roboto-Medium';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'Roboto-Regular';
+    color: $color;
+  } @else if $weight==thin {
+    font-family: 'Roboto-Thin';
+    color: $color;
+  }
+}
+@mixin garamondFont($weight: regular, $color: #000) {
+  @if $weight==bold {
+    font-family: 'Garamond-bold';
+    color: $color;
+  } @else if $weight==regular {
+    font-family: 'Garamond-Regular';
+    color: $color;
+  }
+}
+
+// @mixin@ keyword Arguments
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// animation
+@mixin rotateAnimate($deg, $time, $delay) {
+  transition: all $time ease $delay;
+  transform: rotate($deg);
+}
+
+// @mixin@  mediaQuery 디바이스별 적용 @mixin@
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}

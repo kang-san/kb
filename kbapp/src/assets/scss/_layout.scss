@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+html,
+body {
+  height: 100%;
+}
+
+// 기본 공통
+#root {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  display: flex;
+}
+
+//gnb
+.gnb {
+	position:relative;
+	&:before {
+		content:'';
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:6rem;
+		background-color:#fc0;
+	}
+	&:after {
+		content:'';
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		box-shadow: 0 10px 15px 0 #e0e1e8;
+	}
+}
+
+.navDepth1 {
+	display:flex;
+	justify-content:center;
+	& {
+		.navDepth2 {
+			> div {
+				overflow:hidden;
+				height:0;
+				transform:translateY(-100%);
+				transition:transform 0.3s;
+			}
+		}
+	}
+	> li.on,
+	&:hover {
+		.navDepth2 {
+			> div {
+				height:34rem;
+				transform:translateY(0);
+			}
+		}
+	}
+  > li {
+		position:relative;
+		width:20rem;
+		& + li {
+			> a {
+				&:before {
+					content:'';
+					display:block;
+					position:absolute;
+					left:0;
+					top:50%;
+					transform:translateY(-50%);
+					background-color:#e0b400;
+					width:0.1rem;
+					height:2.8rem;
+				}
+			}
+		}
+    > a {
+			display:block;
+      position: relative;
+      width: 100%;
+      font-size: 1.8rem;
+      line-height:6rem;
+      text-align: center;
+      color: #222;
+			font-weight:bold;
+			z-index:1;
+    }
+    &.on > a,
+    > a:active {
+			background-color:#60584c;
+      color:$white;
+    }
+		&:hover {
+			background-color:#60584c;
+			> a {
+				color:#fff;
+				background-color:#60584c;
+			}
+			.navDepth2 {
+				display:block;
+			}
+			&:before {
+				content:'';
+				position:absolute;
+				left:0;
+				top:0;
+				width:100%;
+				height:100%;
+				background-color:#f9f6f1;
+			} 
+		}
+  }
+}
+
+.navDepth2 {
+	position:relative;
+	overflow:hidden;
+	width:20rem;
+	height: calc(100% - 6rem);
+	z-index:1;
+	&.on,
+	&:hover {
+		background-color:#f9f6f1;
+	}
+	& li.on,
+	& li:hover {
+		a {
+			font-weight:bold;
+		}
+	}
+  a {
+		display:block;
+		position:relative;
+		z-index:1;
+		padding: 1rem 0;
+    width: 100%;
+    font-size: 1.6rem;
+		line-height:2rem;
+    color: #222;
+    text-align:center;
+  }
+}
+
+//header
+.headerWrap {
+  position:fixed;
+  top:0;
+  z-index:100;
+  background:$white;
+  width: 100%;
+  .header{
+    display:flex;
+		align-items:center;
+    height: 6.2rem;
+    padding: 0 2rem;
+    border-bottom: 0.1rem solid $bg-gray;
+		h1 {
+			font-size:2.2rem;
+			line-height:3rem;
+			color:#776c61;
+			font-weight:bold;
+			span {
+				font-size:1.6rem;
+				line-height:2rem;
+				color:#222;
+				font-weight:bold;
+			}
+		}
+  }
+  .headUtile {
+    margin-left: auto;
+    display:flex;
+    align-items:center;
+    line-height:3.8rem;
+		li {
+			position:relative;
+			padding:0 2rem;
+			display:flex;
+			align-items:center;
+			em {
+				font-weight:bold;
+				margin-left:0.4rem;
+			}
+			button {
+				margin-left:0.8rem;
+				border:0.1rem solid #ddd;
+				border-radius:0.4rem;
+				background-color:#f9f9f9;
+				padding:0 1.3rem;
+				color:#666;
+				font-size:1.4rem;
+				line-height:3.2rem;
+			}
+		}
+		li:last-child {
+			padding-right:0;
+		}
+		li + li {
+			&:before {
+				content:'';
+				position:absolute;
+				left:0;
+				top:50%;
+				transform:translateY(-50%);
+				width:0.1rem;
+				height:2rem;
+				background-color:#ddd;
+			}
+		}
+		.h_time {
+			color:#777;
+			font-size:1.4rem;
+			line-height:2rem;
+			font-weight:bold;
+		}
+		.userInfo {
+			color:#222;
+			font-size:1.4rem;
+			line-height:2rem;
+			font-weight:bold;
+		}
+		.h_alram {
+			color:#222;
+			font-size:1.4rem;
+			line-height:2rem;
+			font-weight:bold;
+		}
+	}
+}
+
+//nav
+.lnb {
+  display: flex;
+  position: relative;
+  padding:2rem;
+	margin-right:2rem;
+  width: 25.6rem;
+  height: 100%;
+	border-radius:1.2rem;
+  background-color: $white;
+  transition: all 0.3s ease 0s;
+  flex-direction: column;
+	.tit-area .tit-con {
+		margin-bottom:0.8rem;
+	}
+}
+
+.nav + .app-wrap {
+	width:calc(100% - 27.6rem);
+	height:100%;
+}
+
+.content {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex: auto;
+  padding-top:12.2rem;
+}
+
+.con-wrap {
+  display: flex;
+  position: relative;
+  overflow: auto;
+  padding: 3rem 6rem 6rem 6rem; 
+  width: 100%;
+	min-width:130.6rem;
+  height: calc(100vh - 12rem); 
+	min-height:82rem;
+  justify-content: center;
+  &.no-header {
+    height: calc(100vh - 7.2rem);
+  }
+  &.no-bottom {
+    height: calc(100vh - 6.2rem);
+    &.no-header {
+      height: 100vh;
+    }
+    .app-scroll {
+      max-height: calc(100vh - 19.7rem);
+    }
+  }
+}
+
+//nav 없을때
+.wide-con-wrap {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+	.lnb {
+		display:none;
+	}
+	.app-wrap {
+		width:calc(100% - 0px);
+		height:100%;
+	}
+}
+
+.tit-area {
+	& .tit-con {
+		margin-bottom:2rem;
+		font-size:2rem;
+		line-height:3.2rem;
+		color:#222;
+		font-weight:bold;
+	}
+}
+
+.app-box {
+	position:relative;
+	width:100%;
+	height:100%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  background: $white;
+	& .tit {
+		font-size:1.6rem;
+		line-height:2.4rem;
+		color:#222;
+	}
+	&-gray {
+		padding: 2rem;
+  	border-radius: 1.2rem;
+		background:#f8f8f8;
+	}
+	&-shadow {
+		padding: 2rem;
+  	border-radius: 1.2rem;
+		box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+	}
+	& .btn-r-fix {
+		position:absolute;
+		right:2rem;
+		top:2.4rem;
+	}
+	.btn-r-fix {
+		button {
+			display:flex;
+			align-items:center;
+			padding: 0 1.5rem;
+			height:4rem;
+			font-size: 1.4rem;
+			min-width: 4rem;
+			border-radius: 0.4rem;
+			font-weight:bold;
+		}
+		button + button {
+			margin-left:1rem;
+		}
+  }
+	& .table-wrap-reg {
+		padding-top:2rem;
+		.btn-r-fix {
+			right:0;
+		}
+	}
+	& .item-set,
+	& .memo-reg {
+		border:0.1rem solid #ddd;
+		color:#222;
+		background-color:#f7f7f7;
+	}
+	& .item-view {
+		border:0.1rem solid #60584c;
+		color:#222;
+	}
+}
+
+.app-box + .app-box {
+	margin-left:3rem;
+	margin-bottom:3rem;
+}
+
+//탭부분
+.tab-con {
+	& h3 {
+		margin-top:2.6rem;
+		padding-bottom:1rem;
+		font-size:1.6rem;
+		line-height:2.4rem;
+		font-weight:bold;
+	}
+	& .input-wrap + .input-wrap {
+		margin-top:1.6rem;
+	}
+}
+
+.tab-ga-con {
+	& .tit {
+		margin-top:2.6rem;
+		font-size:1.8rem;
+		line-height:2.4rem;
+		font-weight:bold;
+	}
+	& h3 {
+		margin-top:2rem;
+		padding-bottom:1.5rem;
+		font-size:1.6rem;
+		line-height:2.4rem;
+		font-weight:bold;
+	}
+}
+
+.bottom-con {
+	margin-top:15.6rem;
+	.input-wrap {
+		padding: 0 3rem 0 1.2rem;
+	}
+}

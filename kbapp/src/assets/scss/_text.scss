@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+.title {
+  &-h3 {
+    font-size: 2rem;
+    color: $black-bluish;
+    line-height: 1.5;
+    font-weight: bold;
+
+    .btn-view {
+      font-size: 1.2rem;
+      color: #0b629c;
+      border-color: #0b629c;
+    }
+  }
+  &-h5 {
+    font-size: 1.6rem;
+    color: $black-bluish;
+    line-height: 1.5;
+  }
+  &-step {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: $p-blue-100;
+    line-height: 1.5;
+    font-weight: bold;
+    span {
+      font-size: 1.2rem;
+      font-weight: inherit;
+    }
+  }
+}
+
+.tit {
+  &-area {
+   
+
+    .sign-pad-wrap & {
+      // margin-top: 0; //2021.09.07
+      margin: 0 0 1rem; //2021.09.07
+
+      .btn-s2 {
+        width: 4.8rem;
+        height: 2.4rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    .check-wrap {
+      margin-left: auto; // 2021.08.25
+      //margin: 3.6rem 0 2.3rem auto; // 2021.08.25
+    }
+  }
+
+  &-area2 {
+    // 2021.10.19
+    position: relative;
+    margin: 0 0 1.6rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &-group {
+    display: flex;
+    align-items: center;
+    margin: 3.2rem 0 1.6rem;
+    padding: 0 1.6rem;
+    .tit-con,
+    .tit-sub {
+      margin: 0;
+    }
+  }
+
+  &-con {
+    .login-area & {
+      margin: 2.4rem 0 1rem;
+    }
+    .step-box & {
+      margin-top: 0;
+    }
+    .btn-view {
+      float: right; // 2022.03.09
+      // font-size: 1.2rem;
+      // color: #0b629c;
+      // border-color: #0b629c;
+    }
+  }
+
+  &-mid {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &-sub {
+    margin: 1.6rem 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  &-small {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &-mini {
+    margin-bottom:1.6rem;
+    font-size: 1.4rem;
+		color:#666;
+
+    .cont > &:first-child {
+      margin-top: 0;
+    }
+  }
+}

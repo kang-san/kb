@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+//퍼블작업용
+$appPath: '../../assets';
+//개발작업용
+//$appPath: '/assets';
+
+// Breakpoints
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+// color
+//$p-blue-100: #0b629c;
+
+$p-blue-100: #0b629c;
+$p-blue-60: #53a5db;
+$p-blue-20: #ddebff;
+$p-blue-10: #f4f8ff;
+$p-yellow-100: #fdb913;
+$p-yellow-60: #ffd651;
+$p-yellow-20: #ffefb3;
+$p-yellow-10: #fff7d7;
+
+$s-red-100: #e64d3d;
+$s-red-80: #d96559;
+$s-red-60: #ff8f74;
+$s-red-20: #ffebe6;
+$s-purple-100: #5243aa;
+$s-purple-60: #c0b5f1;
+$s-purple-20: #eae5ff;
+$s-green-100: #18a558;
+$s-green-60: #a3ebb1;
+$s-green-20: #deffe9;
+$s-teal-100: #07a2bf;
+$s-teal-60: #79e1f1;
+$s-teal-20: #d2f9ff;
+$s-brown-100: #5f472a;
+$s-brown-60: #8f8273;
+$s-brown-20: #ece6de;
+$s-orange-100: #e48512;
+$s-orange-60: #ffb152;
+$s-orange-20: #ffe0b9;
+
+$white: #fff;
+$black-bluish: #050f1e;
+$dark-gray: #42526e;
+$gray: #79869a;
+$light-gray: #a4adba;
+$bg-gray: #ebedef;
+$bg-light-gray: #f8fafa;
+$bd-gray: #c6c9ce;
+$bd-light-gray: #dfe1e5;

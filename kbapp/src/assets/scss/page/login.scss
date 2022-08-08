@@ -1,0 +1,343 @@
+@charset "utf-8";
+
+@import '../variable';
+@import '../mixin';
+
+.login {
+  &-wrap {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-light-gray;
+    margin-top:-12.2rem; //2022-08-04 KSM margin-top 추가
+  }
+
+  &-con {
+    display: flex;
+    flex-shrink: 0;
+    width: 95.3rem;
+    min-width: 95.3rem;
+    height: 64rem;//65.8rem;
+  }
+
+  &-area {
+    flex: none;
+    position: relative;
+    padding: 2.7rem 3.2rem;
+    width: 39.6rem;
+    min-height: 64rem;//65.8rem;
+    box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.1);
+    @include prefix(border-radius, 2rem);
+    background-color: $white;
+
+    .logo {
+      color: $p-blue-100;
+      font-size: 1.6rem;
+      font-weight: bold;
+      font-family: 'Apple SD Gothic Neo',
+        'Malgun Gothic',
+        arial,
+        sans-serif;
+    }
+
+    // 2021.08.25 h2 -> tit
+    .tit {
+      margin: 2.4rem 0;
+      color: $black-bluish;
+      font-size: 2rem;
+      font-weight: normal;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    /* page-navi */
+    .page-navi {
+      height: 2.4rem;
+
+      .btn-back {
+        position: relative;
+        padding-left: 2.8rem;
+        color: $black-bluish;
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+        height: 2.4rem;
+        font-weight: normal;
+        cursor: pointer;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          display: block;
+          width: 2.4rem;
+          height: 2.4rem;
+          background: url('#{$appPath}/images/icon/btn-common-back-n-24-black@2x.png') no-repeat 50% 50%;
+          background-size: 100%;
+        }
+
+        .ico-back {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+
+    
+
+    
+
+    .text-login {
+      margin: 1.6rem 0;
+      color: #777777;
+      font-size: 1.4rem;
+      text-align: center;
+      vertical-align: top;
+
+      // .ico {
+      //   margin: .2rem .7rem 0 0;
+      //   vertical-align: top;
+      // }
+    }
+
+    .text-info2 {
+      margin-top: 1.6rem;
+
+      // .ico {
+      //   margin: .2rem .7rem 0 0;
+      //   vertical-align: top;
+      // }
+    }
+
+    .footer-logo {
+      margin-top: 2rem; //2022-08-04 KSM 8rem -> 2rem 수정
+      text-align: center;
+
+      img {
+        width: 10.2rem;
+      }
+		
+			//2022-08-04 KSM 작업중 샘플링
+			position:relative;
+			&::before {
+				content:'KB생명보험';
+				position:absolute;
+				left:50%;
+				top:0;
+				width:102px;
+				margin-left:-51px;				
+				height:100%;
+				display:block;
+				font-size:20px;
+				font-weight:bold;
+				background:rgba(255, 0, 0, 0.5);
+				color:#fff;
+			}
+			// //2022-08-04 KSM 작업중 샘플링
+			
+    }
+  }
+
+  &-form {
+    // display: inline-block;
+    // width: 32.8rem;
+
+    legend {
+      height: 0;
+    }
+  }
+
+  &-block {
+    position: relative;
+    margin-top: 7rem;
+
+    .block-wrap {
+      position: relative;
+      height: 25rem;
+
+      // 2021.08.25
+      // .tit-area {
+      //   //display: table;
+      //   width: 100%;
+      //   //height: 5.2rem;
+      //   height: 12rem;
+      // }
+
+      // .title-h5 {
+      //   //display: table-cell;
+      //   vertical-align: middle;
+      // }
+
+      .text-forget-pass {
+        margin-top: 2.4rem;
+        display: block;
+        color: #777777;
+        font-size: 1.4rem;
+        text-align: center;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .input-hidden-wrap {
+      //width: 55%;
+      //margin: 7.4rem 4.8rem 0 7.2rem;
+      margin: 0 7.2rem;
+
+      input::-webkit-input-placeholder {
+        color: #8e9796;
+        -webkit-text-fill-color: #8e9796;
+        -webkit-opacity: 1;
+      }
+    }
+  }
+}
+
+.movie {
+  &-area {
+    flex: none;
+    margin-left: auto;
+    padding-top: 7.6rem;
+  }
+
+  &-logo {
+    width: 11.4rem;
+		
+		//2022-08-04 KSM 작업중 샘플링
+		position:relative;
+		&::before {
+			content:'영업관리자';
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			display:block;
+			font-size:20px;
+			font-weight:bold;
+			background:rgba(255, 0, 0, 0.5);
+			color:#fff;
+		}
+		// //2022-08-04 KSM 작업중 샘플링
+
+    &::after {
+      margin-top: 1.6rem;
+      content: '';
+      display: block;
+      width: 3.7rem;
+      height: .2rem;
+      background-color: $p-blue-60;
+    }
+  }
+
+  &-tit {
+    margin: 1.6rem 0 7.6rem;
+    width: 41.4rem;
+
+		//2022-08-04 KSM 작업중 샘플링
+		position:relative; 
+		&::after {
+			content:'안녕하세요. 평생행복파트너 KB생명 영업 관리자 시스템 입니다.';
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			display:block;
+			font-size:20px;
+			font-weight:bold;
+			background:rgba(255, 0, 0, 0.5);
+			color:#fff;
+		}
+		// //2022-08-04 KSM 작업중 샘플링
+  }
+
+  &-box {
+    overflow: hidden;
+    width: 47.8rem;
+    height: 27rem;
+		
+		//2022-08-04 KSM 작업중 샘플링
+		position:relative; 
+		&::after {
+			content:'Image';
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			display:block;
+			padding-top:100px;
+			font-size:50px;
+			font-weight:bold;
+			text-align:center;
+			background:rgba(255, 0, 0, 0.5);
+			color:#fff;
+		}
+		// //2022-08-04 KSM 작업중 샘플링
+  }
+}
+
+.device {
+  &-list {
+    margin-top: 2.4rem;
+
+    li {
+      //display: table;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.6rem;
+      padding: .8rem 1.2rem 1.2rem;
+      width: 100%;
+      @include prefix(border-radius, .6rem);
+      border: .1rem solid $bd-light-gray;
+
+      .side-r {
+        //margin-left: auto;
+        //float: right;
+        //margin-top: .4rem;
+        //display: table-cell;
+        width: 6.4rem;
+        flex: none;
+      }
+    }
+  }
+
+  &-info {
+    // display: table-cell;
+    // vertical-align: top;
+    width: 100%;
+  }
+
+  &-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    //font-family:'Apple SD Gothic Neo-SemiBold';
+    //font-family: 'AppleSDGothicNeo-SemiBold';
+  }
+
+  &-access-time {
+    font-size: 1.2rem;
+    color: $gray;
+  }
+}
+
+
+//input-area
+// input {
+//   &::placeholder,
+//   &:-ms-input-placeholder,
+//   &::-webkit-input-placeholder,
+//   &:-moz-placeholder {
+//     opacity: 0;
+//     font-size: 0;
+//     color: $white !important;
+//   }
+// }
+
+
+
+

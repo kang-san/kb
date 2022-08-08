@@ -1,0 +1,479 @@
+@charset "utf-8";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 32rem;
+}
+
+// 기본 공통
+.wrap {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.content {
+  padding-top: 1.6rem;
+
+  &.fixed {
+    padding-bottom: 6.4rem;
+    height: calc(100vh - 4.7rem);
+    overflow: auto;
+  }
+}
+
+.con-box {
+  margin: 1.6rem 0;
+  padding: 0 1.6rem;
+
+  .input-wrap {
+    margin-top: 1.6rem;
+    // &:first-child {
+    //   margin-top: 0;
+    // }
+  }
+}
+
+.btn-area.flex {
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+  align-items: center;
+  -webkit-align-items: center;
+  align-content: center;
+  -webkit-align-content: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+
+  [class*='btn-'] {
+    // 2021.11.10: class^ -> class*
+    flex: 1;
+    -webkit-flex: 1;
+    margin-left: 1.6rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .btn-l {
+    margin-left: 0.8rem;
+  }
+
+  .btn-m {
+    padding: 0;
+  }
+
+  .btn-ico {
+    display: flex; // 2021.10.28
+    justify-content: center; // 2021.10.28
+    flex-wrap: wrap; // 2021.10.28
+    padding: 4.8rem 0 0.8rem;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    border: 0.1rem solid $bd-gray;
+    border-radius: 0.8rem;
+
+    background-repeat: no-repeat;
+    background-position: center 1.6rem;
+    background-size: 2.4rem;
+
+    &.on {
+      color: $p-blue-100;
+      border: 0.1rem solid $p-blue-60;
+      background-color: $p-blue-10;
+    }
+
+    + button {
+      margin-left: 2.4rem;
+    }
+
+    span {
+      display: block;
+      margin-top: -0.2rem;
+      font-size: 1.2rem;
+    }
+
+    &.btn {
+      &-omni {
+        background-image: url('#{$appPath}/images/icon/btn-gnb-omni-24-darkgray@2x.png');
+
+        &.on {
+          background-image: url('#{$appPath}/images/icon/btn-gnb-omni-24-blue@2x.png');
+        }
+      }
+
+      &-kakao {
+        background-image: url('#{$appPath}/images/icon/ic-plan-kakao-24-darkgray@2x.png');
+
+        &.on {
+          background-image: url('#{$appPath}/images/icon/ic-plan-kakao-24-blue-100@2x.png');
+        }
+      }
+
+      &-camera {
+        background-image: url('#{$appPath}/images/icon/ic-plan-camera-24-darkgray@2x.png');
+
+        &.on {
+          background-image: url('#{$appPath}/images/icon/ic-plan-camera-24-blue-100@2x.png');
+        }
+      }
+
+      &-email {
+        background-image: url('#{$appPath}/images/icon/btn-plan-email-24-darkgray@2x.png');
+
+        &.on {
+          background-image: url('#{$appPath}/images/icon/btn-plan-email-24-blue-100@2x.png');
+        }
+      }
+    }
+  }
+}
+
+.btn-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //margin: 4.8rem 0 0;
+  padding: 0 1.6rem 1.6rem;
+  background: #fff;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1.6rem;
+    left: 0;
+    width: 100%;
+    height: 1.6rem;
+    z-index: 20;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+}
+
+.text-box {
+  color: $dark-gray;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  word-break: keep-all;
+  word-wrap: break-word;
+
+  &.pd-16 {
+    padding: 0 1.6rem;
+  }
+
+  & + .text-box {
+    margin-top: 0.8rem;
+  }
+}
+
+/* 고객 정보 직접 변경 서비스 */
+
+.update-box {
+  padding: 2.4rem 2rem 1.6rem;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 48rem;
+  }
+}
+
+.update-list {
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem 0.8rem;
+
+    span {
+      display: block;
+      width: 2.4rem;
+      line-height: 2.4rem;
+      margin-right: 2rem;
+      color: $p-blue-100;
+      font-size: 1.4rem;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 100%;
+      background-color: $p-blue-10;
+    }
+
+    p {
+      position: relative;
+      flex: 1;
+      padding: 1.6rem;
+      border-radius: 0.6rem;
+      box-shadow: 0 6px 20px 0 rgba(157, 167, 195, 0.18);
+      background-color: $white;
+
+      &::before {
+        position: absolute;
+        left: -0.6rem;
+        top: 50%;
+        content: '';
+        width: 0.6rem;
+        height: 1.2rem;
+        box-shadow: 0 6px 20px 0 rgba(157, 167, 195, 0.18);
+        transform: translateY(-50%);
+        background: url('#{$appPath}/images/img/bubble-triangle@2x.png')
+          no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+/* 계약관계인 */
+.top-header {
+  display: flex;
+  align-items: center;
+  height: 4.7rem;
+  padding: 0 1.6rem;
+  border-bottom: 0.1rem solid $bd-light-gray;
+
+  .tit-sub {
+    position: absolute;
+    left: 50%;
+    width: fit-content;
+    transform: translateX(-50%);
+  }
+}
+
+.m-logo {
+  width: 6.4rem;
+  height: 1.6rem;
+  font-size: 0;
+  background: url('#{$appPath}/images/img/img-pru-logo@2x.png') no-repeat left /
+    100%;
+}
+
+.btn-tel {
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 0;
+  background: url('#{$appPath}/images/icon/ic-phone@2x.png') no-repeat left /
+    100%;
+}
+
+.top-box {
+  margin: 1.6rem 0 0.8rem 1.6rem;
+  padding: 4rem 0 4rem 2.4rem;
+  border-radius: 0.8rem 0 0 0.8rem;
+  background: $p-yellow-100 url('#{$appPath}/images/img/img-omni-1@2x.png')
+    no-repeat right bottom / 13.8rem;
+
+  span {
+    font-size: 1.6rem;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 2.8rem;
+    font-weight: bold;
+  }
+}
+
+.gray-box {
+  margin-top: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  background: $bg-light-gray;
+}
+
+.summary-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  dt,
+  dd {
+    width: 50%;
+    margin-top: 0.8rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  dt {
+    color: $gray;
+  }
+
+  dd {
+    text-align: right;
+    font-weight: bold;
+
+    .text-small {
+      display: block;
+      color: $gray;
+      font-weight: normal;
+    }
+  }
+}
+
+.kb-img {
+  width: 16rem;
+  height: 2.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0;
+  background: url('#{$appPath}/images/img/img-kb-logo@2x.png') no-repeat left /
+    100%;
+}
+
+.img-box {
+  padding: 2.4rem 2rem 0.8rem;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 15.2rem;
+  }
+}
+
+.case-box {
+  padding-left: 2.6rem;
+  font-size: 1.5rem;
+  background: url('#{$appPath}/images/icon/ic-omni-chatbubble-color@2x.png')
+    no-repeat left top / 1.6rem;
+}
+
+.phone-box {
+  padding-left: 2.2rem;
+  font-size: 1.2rem;
+  color: $dark-gray;
+  background: url('#{$appPath}/images/icon/ic-omni-cellphone-color@2x.png')
+    no-repeat left top / 1.6rem;
+}
+
+.kb-box {
+  padding: 4.8rem 1.6rem 2.4rem;
+
+  .con-box + & {
+    padding-top: 3.2rem;
+  }
+}
+
+/* 개인정보 수집 동의 */
+.guide-box {
+  margin: 2.4rem 1.6rem;
+}
+
+.guide-tit {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+
+.guide-txt {
+  line-height: 1.7;
+  font-size: 1.4rem;
+  color: $dark-gray;
+}
+
+.w-box {
+  margin: 0 1.6rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 20px 0 rgba(6, 15, 29, 0.08);
+  background: $white;
+
+  &:nth-last-child(1) {
+    margin-bottom: 2.4rem;
+  }
+
+  .gray-box {
+    margin: 0.8rem 0 1.6rem;
+  }
+
+  & > .check-wrap {
+    margin-top: 1.6rem;
+  }
+
+  & > *:nth-child(1) {
+    margin-top: 0;
+  }
+
+  & > *:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+}
+
+.hypen-list {
+  li {
+    position: relative;
+    padding: 0.6rem 0 0.2rem 1rem;
+    font-size: 1.2rem;
+    color: $dark-gray;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      content: '-';
+    }
+  }
+}
+
+.yell-box {
+  margin-bottom: 3.2rem;
+
+  button {
+    margin-top: 1.6rem;
+  }
+}
+
+.c-blue {
+  .check-wrap.chk-style {
+    label {
+      color: $p-blue-100;
+      font-weight: bold;
+    }
+  }
+
+  .c-darkgray {
+    margin: 0.6rem 0 0 2.3rem;
+  }
+}
+
+.check-wrap.chk-style {
+  margin-right: 0.8rem;
+
+  label {
+    padding-left: 2.3rem;
+
+    &::before,
+    &::after {
+      top: 0.5rem;
+    }
+  }
+}
+
+.gray-box {
+  .f-14 {
+    margin: 0.4rem 0;
+
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+}
+
+.sub-th {
+  padding-left: 0.8rem;
+
+  &::before {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-color: $dark-gray;
+  }
+}

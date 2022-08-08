@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+// slide popup
+@keyframes bottomVerticalClose {
+  0% {
+    bottom: 0;
+  }
+
+  100% {
+    bottom: -100%;
+  }
+}
+
+@keyframes bottomVerticalOpen {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+// 설정 on off
+@keyframes setting_swich_on {
+  0% {
+    left: .1rem;
+  }
+
+  100% {
+    left: 1.7rem;
+  }
+}
+
+@keyframes setting_swich_off {
+  0% {
+    left: 1.7rem;
+  }
+
+  100% {
+    left: .1rem;
+  }
+}
+
+// nav on off
+@keyframes nav_on {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes nav_off {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+  }
+}

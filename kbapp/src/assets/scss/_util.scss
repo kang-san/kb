@@ -1,0 +1,421 @@
+@charset "utf-8";
+
+// overflow 속성
+.no-scroll {
+  overflow: hidden !important;
+}
+
+//float
+.fl-l {
+  float: left !important;
+}
+
+.fl-r {
+  float: right !important;
+}
+
+.fl-none {
+  float: none !important;
+}
+
+// display
+.hide {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.in-block {
+  display: inline-block !important;
+}
+
+// 정렬
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+  //padding-left: 2rem !important;
+}
+
+.text-right {
+  text-align: right !important;
+  //padding-right: 2rem !important;
+}
+
+.vertical-t {
+  vertical-align: top !important;
+}
+
+.vertical-m {
+  vertical-align: middle !important;
+}
+
+// 공통 보조속성
+.none-bg {
+  background-color: transparent !important;
+}
+
+.bdt-0 {
+  border-top: 0 !important;
+}
+
+.bdb-0 {
+  border-bottom: 0 !important;
+}
+
+.bdt {
+  border-top: 0.1rem solid $bd-light-gray;
+}
+
+.bdb {
+  border-bottom: 0.1rem solid $bd-light-gray;
+}
+
+// margin
+.mg-0 {
+  margin: 0 !important;
+}
+
+.mg-auto {
+  margin: auto !important;
+  display: block !important;
+}
+
+.mgt-0 {
+  margin-top: 0 !important;
+}
+
+.mgt-5 {
+  margin-top: 0.5rem !important;
+}
+
+.mgt-8 {
+  margin-top: 0.8rem !important;
+}
+
+.mgt-10 {
+  margin-top: 1rem !important;
+}
+
+.mgt-12 {
+  margin-top: 1.2rem !important;
+}
+
+.mgt-16 {
+  margin-top: 1.6rem !important;
+}
+
+.mgt-18 {
+  margin-top: 1.8rem !important;
+}
+
+.mgt-20 {
+  margin-top: 2rem !important;
+}
+
+// padding
+.pd-0 {
+  padding: 0 !important;
+}
+.pd-20 {
+  padding: 2rem !important;
+}
+
+.pdt-0 {
+  padding-top: 0 !important;
+}
+
+// width
+.w100 {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.item {
+  &-r {
+    width: calc(100% - 18rem);
+  }
+
+  &-r2 {
+    width: calc(100% - 4.2rem);
+  }
+
+  &-r3 {
+    width: calc(100% - 8rem);
+  }
+
+  &-full {
+    position: relative;
+
+    .check-box {
+      left: 0;
+      top: 1rem;
+      width: calc(100% + 18rem);
+      align-items: flex-start;
+    }
+  }
+}
+
+// flex
+.flex {
+  display: flex !important;
+}
+
+.flex-none {
+  flex: none !important;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.jb {
+  justify-content: space-between;
+}
+
+.j-fs {
+  justify-content: flex-start !important;
+}
+
+.jc {
+  justify-content: center;
+}
+
+.a-fs {
+  align-items: flex-start !important;
+}
+
+.ac {
+  align-items: center !important;
+}
+
+.hbox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+
+  &.cc {
+    justify-content: center;
+  }
+}
+
+.vbox {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  &.cc {
+    margin: auto 0;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// color
+.c-red {
+  color: $s-red-100 !important;
+}
+
+.c-orange {
+  color: $s-orange-100 !important;
+}
+
+.c-blue {
+  color: $p-blue-100 !important;
+}
+
+.bg-gray {
+  background-color: $bg-gray !important;
+}
+
+
+
+// loading-bar
+.loading-bar {
+  display: inline-block;
+  height: 0.2rem;
+  background-color: $p-yellow-100;
+  vertical-align: top;
+
+  &-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.2rem;
+    z-index: 200;
+  }
+}
+
+// tab
+.tab {
+  &-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      margin-top: 0.8rem;
+      flex-basis: 32%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.active {
+        .tab {
+          color: $p-blue-60;
+          background-color: $white;
+          border: 0.1rem solid $p-blue-60;
+        }
+      }
+    }
+		
+    .tab {
+      display: flex;
+      padding: 0 0.7rem;
+      width: 100%;
+      height: 5rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: normal;
+      text-align: center;
+      color: $gray;
+      background-color: $white;
+      border: 0.1rem solid $bd-light-gray;
+      @include prefix(border-radius, 0.6rem);
+      cursor: pointer;
+    }
+
+    &.tab-type {
+      li {
+        flex: 1;
+        position: relative;
+        margin-top: 0;
+
+        .tab {
+          background-color: $white;
+          border-top: 0.1rem solid $white;
+          border-left: 0;
+          border-right: 0;
+					border-bottom:none;
+          @include prefix(border-radius, 0);
+					color:#222;
+					position:relative;
+					&:before {
+						content:'';
+						display:block;
+						position:absolute;
+						left:0;
+						bottom:0;
+						width:100%;
+						height:0.1rem;
+						background-color:#ddd;
+					}
+        }
+
+        &.active {
+          .tab {
+						position:relative;
+            font-weight: bold;
+            background-color: $white;
+            @include prefix(border-radius, 0.4rem 0.4rem 0 0);
+						border-bottom:none;
+						&:before {
+							content:'';
+							display:block;
+							position:absolute;
+							left:0;
+							bottom:0;
+							width:100%;
+							height:0.3rem;
+							background-color:#ffbc00;
+						}
+          }
+        }
+      }
+    }
+  }
+
+  &-con,
+	&-ga-con {
+    display: none;
+    position: relative;
+
+    &.active {
+      display: block;
+    }
+		& .input-wrap {
+			padding: 0 3rem 0 1.2rem;
+		}
+  }
+}
+
+.tab-type2 {
+	display: flex;
+	flex-wrap: wrap;
+	position:relative;
+	&:before {
+		content:'';
+		display:block;
+		position:absolute;
+		left:0;
+		bottom:0;
+		width:100%;
+		height:0.1rem;
+		background-color:#ddd;
+	}
+
+	li {
+		position: relative;
+		margin-top: 0;
+
+		.tab {
+			display: flex;
+      padding: 0 0.7rem;
+			width:17rem;
+			height:5rem;
+			font-size:1.6rem;
+			align-items: center;
+      justify-content: center;
+			color:#222;
+			cursor: pointer;
+		}
+
+		&.active {
+			.tab {
+				position:relative;
+				font-weight: bold;
+				background-color: $white;
+				&:before {
+					content:'';
+					display:block;
+					position:absolute;
+					left:0;
+					bottom:0;
+					width:100%;
+					height:0.3rem;
+					background-color:#ffbc00;
+				}
+			}
+		}
+	}
+}
+
+.tab-ga-con {
+	overflow-y:auto;
+	max-height:58rem;
+	padding-bottom:5rem;
+}

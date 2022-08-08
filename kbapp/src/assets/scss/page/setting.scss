@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+@import '../variable';
+@import '../mixin';
+
+
+// setting
+.setting-wrap {
+  width: 60rem;
+}
+
+.set-tit {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.set-box {
+  margin: 1.6rem 0 4.6rem;
+  border-radius: 1rem;
+  background: $bg-light-gray;
+
+  &:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+}
+
+.set-list {
+  display: table;
+  width: 56.8rem;
+  margin: 0 auto;
+  height: 5.7rem;
+  border-top: 0.1rem solid $bd-light-gray;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    //font-weight: bold; // 2022.01.12
+  }
+
+  .btn-swich {
+    display: table-cell;
+    vertical-align: top;
+    padding-top: 1.6rem;
+  }
+
+  .set-link {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    //font-weight: bold; // 2022.01.12
+    background: url('#{$appPath}/images/icon/btn-com-chevron-right-16-blue-100@2x.png')
+      no-repeat right;
+    background-size: 1.6rem;
+  }
+}
+
+// faq
+.faq-wrap {
+  width: 60.6rem;
+  margin: 0 auto;
+
+  .inp-search {
+    margin: 0 1.2rem 1.2rem;
+  }
+}
+
+.faq-list {
+  & li {
+    width: 100%;
+    height: 4.8rem;
+    padding: 1.4rem 1.2rem;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+
+    & a::before {
+      display: inline-block;
+      width: 2.2rem;
+      content: 'Q';
+      font-weight: bold;
+      color: $gray;
+    }
+
+    &:hover,
+    &.on {
+      border-radius: 1.2rem;
+      background: $bg-light-gray;
+    }
+  }
+}
+
+.paging {
+  display: table;
+  margin:10rem auto 0;
+
+  p {
+    display: inline-block;
+    margin: 0 0.6rem;
+    vertical-align: middle;
+
+    a {
+      display: inline-block;
+      width: 2.4rem;
+      line-height: 2.4rem;
+      margin: 0 0.6rem;
+      text-align: center;
+			color:#222;
+      font-size: 1.4rem;
+			font-weight:bold;
+      &.on {
+        border-radius: 0.4rem;
+        background: #ffcc00;
+      }
+    }
+  }
+
+  & > a {
+    display: inline-block;
+    width:2.4rem;
+    height:2.4rem;
+		margin: 0 0.6rem;
+    font-size: 0;
+    vertical-align: middle;
+  }
+
+	.btn-first {
+    background: url('#{$appPath}/images/icon/2022/btn-first.png') no-repeat;
+    background-size: 2.4rem;
+		background-position: center;
+  }
+  .btn-pre {
+    background: url('#{$appPath}/images/icon/2022/btn-prev.png') no-repeat;
+    background-size: 2.4rem;
+		background-position: center;
+  }
+  .btn-next {
+    background: url('#{$appPath}/images/icon/2022/btn-next.png') no-repeat;
+    background-size: 2.4rem;
+		background-position: center;
+  }
+	.btn-last {
+    background: url('#{$appPath}/images/icon/2022/btn-last.png') no-repeat;
+    background-size: 2.4rem;
+		background-position: center;
+  }
+}
+
+.btn_back {
+  margin: 0 1.2rem;
+  padding-left: 1.2rem;
+  font-size: 1.2rem;
+  background: url('#{$appPath}/images/icon/btn-com-back2-16-black@3x.png')
+    no-repeat left;
+  background-size: 1.2rem;
+}
+
+.faq-view-wrap {
+  margin: 2.4rem 1.2rem;
+  font-size: 1.5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  & > p {
+    margin-top: 2.4rem;
+  }
+}
+
+.u-date {
+  margin: 0 1.2rem;
+  font-size: 1.4rem;
+  color: $gray;
+}

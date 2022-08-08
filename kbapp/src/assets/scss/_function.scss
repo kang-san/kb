@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+// 기준이 되는 사이즈 - chrome 에뮬레이터 기준
+$size-base: 1.75; // 필요한 기본이되는 기기를 적용
+$size-ipadpro105: .99999; // 834 x 1112
+$size-iponePlus: 1.75; // 414 x 736
+$size-iponeX: 1.95; // 375 x 812
+$size-galaxyS5: 2.05; // 360 x 640
+
+// @function rem($px, $calc: $size-ipadpro105) {
+//   @return #{($px / $calc) * 0.2}rem;
+// }
+@function rem($px, $calc: $size-ipadpro105) {
+  @return #{($px / $calc) * 0.1}rem;
+}
+

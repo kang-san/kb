@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+
+/*******************************/
+/***** font *****/
+/******************************/
+@font-face {
+	font-family: KBFGTextL; 
+	src: local(KBFGTextL),
+		 url(../font/eot/KBFGTextL.eot?#iefix) format('embedded-opentype'),
+		 url(../font/woff/KBFGTextL.woff) format('woff'),
+		 url(../font/ttf/KBFGTextL.ttf) format('truetype'); 
+	font-style: normal; 
+	font-weight: normal; 
+	unicode-range: U+0-10FFFF; 
+}
+@font-face {
+	font-family: KBFGTextM; 
+	src: local(KBFGTextM),
+		url(../font/eot/KBFGTextM.eot?#iefix) format('embedded-opentype'),
+		url(../font/woff/KBFGTextM.woff) format('woff'),
+		url(../font/ttf/KBFGTextM.ttf) format('truetype'); 
+	font-style: normal; 
+	font-weight: normal; 
+	unicode-range: U+0-10FFFF; 
+}
+@font-face {
+	font-family: KBFGTextB; 
+	src: local(KBFGTextB),
+		url(../font/eot/KBFGTextB.eot?#iefix) format('embedded-opentype'),
+		url(../font/woff/KBFGTextB.woff) format('woff'),
+		url(../font/ttf/KBFGTextB.ttf) format('truetype'); 
+	font-style: normal; 
+	font-weight: normal; 
+	unicode-range: U+0-10FFFF; 
+}
+html {
+  font-size: 10px;
+}
+/* CSS reset */
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  font-family: 'KBFGTextL','Apple SD Gothic Neo-Regular', 'Malgun Gothic', arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.2rem;
+  vertical-align: baseline;
+  background: transparent;
+  -webkit-text-size-adjust: none;
+  list-style: none;
+  line-height: 1.4;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: normal;
+}
+em,
+address {
+  font-style: normal;
+}
+hr {
+  display: none;
+}
+body {
+  line-height: 1;
+  word-break: break-all;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table th,
+table td {
+  vertical-align: middle;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+legend,
+caption,
+.skip,
+.hidden {
+  position: absolute;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+caption {
+  position: static;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-size: 1.2rem;
+  color: #222;
+  font-family: 'KBFGTextL','Apple SD Gothic Neo-Regular', 'Malgun Gothic', arial, sans-serif;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+button,
+button:active,
+button:focus {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+img,
+input {
+  vertical-align: top;
+  border: none;
+  outline: none;
+}
+img {
+  max-width: 100%;
+}
+label {
+  vertical-align: top;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+select {
+  margin: 0;
+  border: 0.1rem solid #c5cddc;
+  padding: 0;
+  font-size: 1.3rem;
+  vertical-align: middle;
+  color: #000;
+  outline: 0;
+}
+textarea {
+  width: 100%;
+  border: 0;
+  color: #222; 
+  line-height: 1.4;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  overflow-y: auto;
+  resize: none;
+  outline: 0;
+  letter-spacing: -0.1rem;
+  background-color: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* html5 reset */
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+details,
+menu,
+figure,
+figcaption,
+canvas {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'KBFGTextL','Apple SD Gothic Neo-Regular', 'Malgun Gothic', arial, sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+input,
+select {
+  -webkit-border-radius: 0;
+  background-color: #fff;
+}
+strong,
+span,
+p {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 12px;
+  }
+}
